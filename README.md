@@ -22,4 +22,7 @@ aws ssm start-session \
 ```
 
 # Credit
-Most of this is taking from [@mohamed-cds's example](https://github.com/mohamed-cds/terraform_test_infrastructure/tree/main/ssm_private_subnet/terraform), with the addition of using only VPC PrivateLinks to run the ECS task.
+Most of this is taken from [@mohamed-cds's example](https://github.com/mohamed-cds/terraform_test_infrastructure/tree/main/ssm_private_subnet/terraform), with the addition of:
+
+- using only VPC PrivateLinks to run the ECS task; and
+- removing the ingress on port 80.
