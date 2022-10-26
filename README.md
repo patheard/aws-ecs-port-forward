@@ -7,10 +7,18 @@ Connect to a private ECS test using SSM Session Manager port forwarding.
 
 ## Connect
 ```sh
-aws ssm start-session --target ecs:<CLUSTER>_<TASK ID>_<CONTAINER_RUNTIME_ID> --document-name AWS-StartPortForwardingSession --parameters '{"portNumber":["80"], "localPortNumber":["1338"]}' --region ca-central-1
+aws ssm start-session \
+    --target ecs:<CLUSTER>_<TASK ID>_<CONTAINER_RUNTIME_ID> \
+    --document-name AWS-StartPortForwardingSession \
+    --parameters '{"portNumber":["80"], "localPortNumber":["1338"]}' \
+    --region ca-central-1
 
 # Example
-aws ssm start-session --target ecs:internal_ad87713568a9469b8bb056780a2e1ffd_ad87713568a9469b8bb056780a2e1ffd-3386804179 --document-name AWS-StartPortForwardingSession --parameters '{"portNumber":["80"], "localPortNumber":["1338"]}' --region ca-central-1
+aws ssm start-session \
+    --target ecs:internal_ad87713568a9469b8bb056780a2e1ffd_ad87713568a9469b8bb056780a2e1ffd-3386804179 \
+    --document-name AWS-StartPortForwardingSession \
+    --parameters '{"portNumber":["80"], "localPortNumber":["1338"]}' \
+    --region ca-central-1
 ```
 
 # Credit
