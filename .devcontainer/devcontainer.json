@@ -1,0 +1,33 @@
+{
+  "name": "aws-ecs-port-forward",
+  "image": "mcr.microsoft.com/vscode/devcontainers/base:buster",
+
+  "features": {
+    "aws-cli": "latest",
+  
+    "terraform": {
+      "version": "1.3.3",
+      "tflint": "none",
+      "terragrunt": "none"
+    }
+  },
+
+  "containerEnv": {
+    "SHELL": "/bin/zsh"
+  },
+
+  "settings": {
+    "[terraform]": {
+      "editor.formatOnSave": true
+    }
+  },
+
+  "extensions": [
+    "hashicorp.terraform",
+    "redhat.vscode-yaml",
+    "github.copilot"
+  ],
+
+  "remoteUser": "vscode",
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh"
+}
